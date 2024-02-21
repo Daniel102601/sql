@@ -1,0 +1,161 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(to right, #2980b9, #6dd5fa); /* Fondo degradado */
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase; /* Convertir el texto a mayúsculas */
+    letter-spacing: 2px; /* Aumentar el espacio entre letras */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el título */
+    transition: transform 0.3s ease; /* Agregar transición al desplazar el título */
+}
+
+.header-left h1:hover {
+    transform: translateY(-3px); /* Desplazar ligeramente hacia arriba al pasar el cursor */
+}
+
+.header-right ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-right ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.header-right ul li:first-child {
+    margin-left: 0;
+}
+
+.header-right ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Añadir bordes redondeados */
+    transition: background-color 0.3s ease; /* Agregar transición al color de fondo */
+}
+
+.header-right ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Cambiar el color de fondo al pasar el cursor */
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Contenido principal */
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+article, aside {
+    flex-basis: calc(50% - 20px);
+}
+
+article {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+article h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+article p {
+    margin-bottom: 15px;
+}
+
+article a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+/* Barra lateral */
+aside {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+aside h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+aside ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Pie de página */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}

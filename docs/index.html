@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>SQL</title>
+<meta name="title" content="Mi Primera Pagina Web Daniel Gomez">
+<meta name="description" content="Mi Primera Pagina Web Daniel Gomez">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/reglas.css">
+
+<body>
+<header>
+    <div class="container">
+        <div class="header-left">
+            <h1>Bases De Datos SQL</h1>
+        </div>
+        <nav class="header-right">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Artículos</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<br>
+<br>
+<div class="container2">
+<article>
+<h1>¿Que es una base de datos?</h1>
+
+<p>Es cualquier cosa que recolecte información y que esta tenga sentido.
+No tienen que ver netamente con los computadores, estas tambien se pueden ver en manera de:
+
+<nav ul>
+<ol> Lista De Supermercado </ol>
+<ol> Lista De Tareas </ol>
+<ol> Libretas De Contactos </ol>
+<ol> Listado De Alumnos </ol>
+<ol> Usuario De Instagram/twitter </ol>
+</nav ul>
+
+
+Es cualquier informacion que se puede guardar y que esta tenga sentido.
+
+Esta información se puede guardar en:
+
+
+<ol> Memoria </ol>
+<ol> Hoja Y Lapiz </ol>
+
+</article>
+<br>
+<br>
+<article>
+<h1> Relational Database Management System (sistema de administración de bases de datos relacionales)(RDBMS)</h1>
+Relational Database Management System (sistema de administración de bases de datos relacionales): 
+Es el softaware que se utiliza para gestionar las bases de datos
+
+<ol>MySQL</ol>
+<ol>postgres</ol>
+<ol>MariaDB</ol>
+<ol>Oracle</ol>
+
+Estas bases nos ayudan a:
+
+<ol>Respaldos</ol>
+<ol>Importacion</ol>
+<ol>Exportar</ol>
+<ol>Concurrencia</ol>
+
+El RDBMS permite conectarse con los diferentes lengujes de programación:
+
+<ol>PHP</ol>
+<ol>Pyhton</ol>
+<ol>Javascript</ol>
+
+Las operaciones mas comunes son las CRUD
+
+<ol><b>C</b>reate (crear)</ol>
+<ol><b>R</b>ead (leer)</ol>
+<ol><b>U</b>pdate (actualizar)</ol>
+<ol><b>D</b>elete (borrar)</ol>
+
+Para que se pueda acceder a los registros o hacer estas operaciones se debe escribir "Query" (Consulta)
+
+Casi todas las empresas manejan sistemas de gestion de bases de datos como:
+
+<ol> Facebook </ol>
+<ol> Amazon </ol>
+
+</article>
+<br>
+<br>
+<article>
+
+<h1>SQL</h1>
+
+La forma de almacenar los datos es por medio de tablas, estas tablas van a tener:
+
+<ol> Columnas (donde se referencia el dato que se esta guardando) </ol>
+<ol> Registro (Los datos que se encuentran dentro de la tabla) </ol>
+
+
+El ID es un numero unico que se genera de manera automatica cuando se realiza un registro
+
+</article>
+<br>
+<br>
+
+<article>
+<h1>Relaciones</h1>
+
+<ol> <h2>1--->N</h2>
+Es donde 1 usario puede crear muchos productos, pero 1 producto solo puede haber sido creado por 1 usuario </ol>
+
+<ol> <h2>N<--->N</h2>
+Es donde 1 un usario puede tener varios productos y 1 producto pueden tener varios usuarios</ol>
+
+</article>
+<br>
+<br>
+<article>
+<h1> ID </h1>
+
+Normalmente los ID son <strong> Primary Key </strong>, pero en el caso que se necesite saber quien creo un registro este ID pas
+a ser un <strong> Forean Key </strong> 
+
+
+</article>
+<br>
+<br>
+<article>
+<h1> Tipos De Datos </h1>
+
+<ul>INT (Numero Entero) </ul>
+<ul>Float (Numeros Decimales)</ul>
+<ul>varchar (Cadena De Caracteres *Se debe indicar que tan largo desea que sea el dato*)</ul>
+
+</article>
+<br>
+<br>
+<article>
+<h1> Creacion De Base De Datos </h1>
+
+<h2> Comandos </h2>
+
+<li> "create database *Ingresa el nombre de la base de datos*; "(crea la base de datos) </li>
+<br>
+<li> "show   databases;"(enlista las bases de datos) </li>
+<br>
+<li> "use *Nombre de la base de datos* (llama la base de datos que se va a utilizar) </li>
+<br>
+<li> "CREATE TABLE *nombre de la tabla* (
+<strong> Dentro del parentesis tienen que ir todos los datso que vaya a contener la tabla </strong>
+<ul> <li> id int not null auto_increment, </li>
+     <li> Nombre varchar(*cantidad de caracteres*)not null,</li>     		
+     <li> created_by int not null,   
+     <li> PRIMARY KEY (id) (Define la llave primaria)</li>
+     <li> FOREAN KEY (created_by) references user(id) (Define la llave foranea)</li>
+
+	</ul>
+     );(crea tablas) </li>
+<br>
+
+<li> "INSERT INTO *Nombre De La Tabla* (*se indican los campos a los cuales se les quiere ingresar datos*
+Ej:Nombre) VALUES (*Indica Los Valores que se van a insertar* Ej: 'Daniel');</li>
+
+<br>
+
+<li> ALTER TABLE *Nombre De La Tabla* MODIFY COLUMN id int auto_increment;(automaticamente aumenta el valor de ID)</li>
+
+<br>
+
+<li> SHOW CREATE TABLE *Nombre De La Tabla* (Comando para crear la misma tabla) </li>
+
+<br>
+
+<li> SELECT * FROM *nombre de la tabla*; (Permite seleccionar elementos dentro de una tabla)</li>
+<ul>
+<li> SELECT * FROM *nombre de la tabla* WHERE id= *numero del id*;(Devuelve 1 solo valor)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* WHERE nombre= 'Daniel';(Devuelve 1 o mas valores)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* WHERE nombre= 'Daniel' AND estado= 'feliz';(Cruza los datos que cumplan con las dos condiciones solicitadas)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* limit 1;(Limita los valores que se vayan a mostrar en base al valor indicado)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* WHERE nombre= 'Daniel' or estado= 'feliz';(Cruza los datos y muestra los campos que cumplan con alguna de las condiciones solicitadas)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* WHERE nombre != 'Daniel';(Descarta los datos que incluyan el valor que se ha indicado en la consulta)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* WHERE edad between 15 and 30;(Busca los registros que esten en el rango indicado en la consulta)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* WHERE email like '%gmail%';(Busca en el campo indicado el dato que se esta solicitando)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* order by *nombre de la columna* asc;(Ordena los datos de manera ascendente)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* order by *nombre de la columna* desc;(Ordena los datos de manera descendente)</li>
+<br>
+<li> SELECT max(*nombre de la columna*) as mayor from user;(Muestra el valor mas alto de la tabla )</li>
+<br>
+<li> SELECT min(*nombre de la columna*) as menor from user;(Muestra el valor menor de la tabla )</li>
+<br>
+<li> SELECT id,*nombre de las columnas(si se van a seleccionar mas de q se debe separar con ',')* from user;(Esta nos permite seleccionar las columnas en especifico que se necesitan)</li>
+<br>
+<li> SELECT id,*nombre de las columnas* name as *nombre por el que se va a reemplazar* from user;(Cambia el nombre de la columna seleccionada)
+<br>
+<li> SELECT <strong>u</strong>.*Se llaman a las columnas que se quieren consultar*,<strong>p</strong>.*Se llaman a las columnas que se quieren consultar*
+ from *nombre de la tabla* <strong>u</strong>*corresponde a alias de la tabla* left join *nombre de la tabla* <strong>p</strong>*corresponde a alias de la tabla*
+ on <strong>u</strong>.*Se llama a la columna que se quiere unir* = <strong>p</strong>. *Se llama a la columna que se quiere unir* (Es para unir dos tablas por medio de su id desde la tabla de usuario (tabla izquierda) solo si estan asociados por medio de su id)</li>
+<br>
+<li> SELECT <strong>u</strong>.*Se llaman a las columnas que se quieren consultar*,<strong>p</strong>.*Se llaman a las columnas que se quieren consultar*
+ from *nombre de la tabla* <strong>u</strong>*corresponde a alias de la tabla* right join *nombre de la tabla* <strong>p</strong>*corresponde a alias de la tabla*
+ on <strong>u</strong>.*Se llama a la columna que se quiere unir* = <strong>p</strong>. *Se llama a la columna que se quiere unir* (Es para unir dos tablas por medio de que la segunda tabla cuente con los valores de la primera y estos son los datos que va a mostrar)</li>
+<br>
+<li> SELECT <strong>u</strong>.*Se llaman a las columnas que se quieren consultar*,<strong>p</strong>.*Se llaman a las columnas que se quieren consultar*
+ from *nombre de la tabla* <strong>u</strong>*corresponde a alias de la tabla* inner join *nombre de la tabla* <strong>p</strong>*corresponde a alias de la tabla*
+ on <strong>u</strong>.*Se llama a la columna que se quiere unir* = <strong>p</strong>. *Se llama a la columna que se quiere unir* (Solo va a mostrar los datos asociados a la tabla )</li>
+<br>
+<li> SELECT <strong>u</strong>.*Se llaman a las columnas que se quieren consultar*,<strong>p</strong>.*Se llaman a las columnas que se quieren consultar*
+ from *nombre de la tabla* <strong>u</strong>*corresponde a alias de la tabla* cross join *nombre de la tabla* <strong>p</strong>*corresponde a alias de la tabla*;(Une todos los valores de la segunda tabla con los datos que fueron seleccionados de la primera)</li>
+<br>
+<li> SELECT count (id), *nombre de la columna* from *nombre de la tabla* group by *nombre de la columna*; (agrupa los elementos en base
+</ul>
+<br>
+<li> UPDATE *nombre de la tabla* SET nombre= 'Daniel' where id= *numero del id*;(Actualiza el dato en base al Id seleccionado)</li>
+<br>
+<li> DELATE from *nombre de la tabla* where id= *numero del id* (Se indica que se quiere eliminar un registro de la tabla indicada, Esto siempre requiere que se indique el id del valor que se quiere eliminar)</li>
+<br>
+<li> rename table *nombre de la tabla* to *nombre por el que se va a reemplazar*; (Cambia el nombre de la tabla) </li>
+<br>
+<li> insert into *nombre de la tabla* (*columnas a las cuales se les desea agregar datos Separadas por ','*) values ('*se empiezan a ingresar los datos separados por ',''),('*se empiezan a ingresar los datos separados por ','');</li>
+<br>
+</article>
+
+</p>
+</div>
+
+
+
+</body>
+
+</html>
