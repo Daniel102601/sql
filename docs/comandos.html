@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>SQL</title>
+<meta name="title" content="SQL">
+<meta name="description" content="SQL">
+<link rel="icon" type="image/png" href="imagen/as.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/reglas.css">
+
+<body>
+<header>
+    
+         <div class="container">
+            <div class="container2">
+                <h1 class="logo">Bases De Datos</h1>
+                <nav>
+                    <ul class="navigation">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="comandos.html">Comandos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+<div class="container">
+<article>
+<h1> Creacion De Base De Datos </h1>
+
+<h2> Crear Base De Datos Y Tablas </h2>
+
+
+<li> "create database *Ingresa el nombre de la base de datos*; "(crea la base de datos) </li>
+<br>
+<li> "show   databases;"(enlista las bases de datos) </li>
+<br>
+<li> "use *Nombre de la base de datos* (llama la base de datos que se va a utilizar) </li>
+<br>
+<li> "CREATE TABLE *nombre de la tabla* (
+<strong> Dentro del parentesis tienen que ir todos los datso que vaya a contener la tabla </strong>
+<ul> <li> id int not null auto_increment, </li>
+     <li> Nombre varchar(*cantidad de caracteres*)not null,</li>     		
+     <li> created_by int not null,   
+     <li> PRIMARY KEY (id) (Define la llave primaria)</li>
+     <li> FOREIGN KEY (*Se llama a la columna que contiene la llave primaria de la otra tabla*) references *se llama la tabla donde pertenece la llave primaria*(*Se llama a la columna que contiene la llave primaria de la otra tabla*) (Define la llave foranea)</li>
+
+	</ul>
+     );(crea tablas) </li>
+<br>
+<h3> Insertar Valores A Las Tablas </h3>
+<br>
+<li> "INSERT INTO *Nombre De La Tabla* (*se indican los campos a los cuales se les quiere ingresar datos*
+Ej:Nombre) VALUES (*Indica Los Valores que se van a insertar* Ej: 'Daniel');</li>
+
+<br>
+
+<li> insert into *nombre de la tabla* (*columnas a las cuales se les desea agregar datos Separadas por ','*) values ('*se empiezan a ingresar los datos separados por ',''),('*se empiezan a ingresar los datos separados por ','');</li>
+
+<br>
+
+<li> ALTER TABLE *Nombre De La Tabla* MODIFY COLUMN id int auto_increment;(automaticamente aumenta el valor de ID)</li>
+
+<br>
+
+<li> SHOW CREATE TABLE *Nombre De La Tabla* (Comando para crear la misma tabla) </li>
+</article>
+<br>
+<article>
+<h2> Consultas Y Union De Tablas </h2>
+<br>
+<li> SELECT * FROM *nombre de la tabla*; (Permite seleccionar elementos dentro de una tabla)</li>
+<ul>
+<li> SELECT * FROM *nombre de la tabla* WHERE id= *numero del id*;(Devuelve 1 solo valor)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* WHERE nombre= 'Daniel';(Devuelve 1 o mas valores)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* WHERE nombre= 'Daniel' AND estado= 'feliz';(Cruza los datos que cumplan con las dos condiciones solicitadas)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* limit 1;(Limita los valores que se vayan a mostrar en base al valor indicado)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* WHERE nombre= 'Daniel' or estado= 'feliz';(Cruza los datos y muestra los campos que cumplan con alguna de las condiciones solicitadas)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* WHERE nombre != 'Daniel';(Descarta los datos que incluyan el valor que se ha indicado en la consulta)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* WHERE edad between 15 and 30;(Busca los registros que esten en el rango indicado en la consulta)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* WHERE email like '%gmail%';(Busca en el campo indicado el dato que se esta solicitando)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* order by *nombre de la columna* asc;(Ordena los datos de manera ascendente)</li>
+<br>
+<li> SELECT * FROM *nombre de la tabla* order by *nombre de la columna* desc;(Ordena los datos de manera descendente)</li>
+<br>
+<li> SELECT max(*nombre de la columna*) as mayor from user;(Muestra el valor mas alto de la tabla )</li>
+<br>
+<li> SELECT min(*nombre de la columna*) as menor from user;(Muestra el valor menor de la tabla )</li>
+<br>
+<li> SELECT id,*nombre de las columnas(si se van a seleccionar mas de q se debe separar con ',')* from user;(Esta nos permite seleccionar las columnas en especifico que se necesitan)</li>
+<br>
+<li> SELECT id,*nombre de las columnas* name as *nombre por el que se va a reemplazar* from user;(Cambia el nombre de la columna seleccionada)
+<br>
+<li> SELECT <strong>u</strong>.*Se llaman a las columnas que se quieren consultar*,<strong>p</strong>.*Se llaman a las columnas que se quieren consultar*
+ from *nombre de la tabla* <strong>u</strong>*corresponde a alias de la tabla* left join *nombre de la tabla* <strong>p</strong>*corresponde a alias de la tabla*
+ on <strong>u</strong>.*Se llama a la columna que se quiere unir* = <strong>p</strong>. *Se llama a la columna que se quiere unir* (Es para unir dos tablas por medio de su id desde la tabla de usuario (tabla izquierda) solo si estan asociados por medio de su id)</li>
+<br>
+<li> SELECT <strong>u</strong>.*Se llaman a las columnas que se quieren consultar*,<strong>p</strong>.*Se llaman a las columnas que se quieren consultar*
+ from *nombre de la tabla* <strong>u</strong>*corresponde a alias de la tabla* right join *nombre de la tabla* <strong>p</strong>*corresponde a alias de la tabla*
+ on <strong>u</strong>.*Se llama a la columna que se quiere unir* = <strong>p</strong>. *Se llama a la columna que se quiere unir* (Es para unir dos tablas por medio de que la segunda tabla cuente con los valores de la primera y estos son los datos que va a mostrar)</li>
+<br>
+<li> SELECT <strong>u</strong>.*Se llaman a las columnas que se quieren consultar*,<strong>p</strong>.*Se llaman a las columnas que se quieren consultar*
+ from *nombre de la tabla* <strong>u</strong>*corresponde a alias de la tabla* inner join *nombre de la tabla* <strong>p</strong>*corresponde a alias de la tabla*
+ on <strong>u</strong>.*Se llama a la columna que se quiere unir* = <strong>p</strong>. *Se llama a la columna que se quiere unir* (Solo va a mostrar los datos asociados a la tabla )</li>
+<br>
+<li> SELECT <strong>u</strong>.*Se llaman a las columnas que se quieren consultar*,<strong>p</strong>.*Se llaman a las columnas que se quieren consultar*
+ from *nombre de la tabla* <strong>u</strong>*corresponde a alias de la tabla* cross join *nombre de la tabla* <strong>p</strong>*corresponde a alias de la tabla*;(Une todos los valores de la segunda tabla con los datos que fueron seleccionados de la primera)</li>
+<br>
+<li> SELECT count (id), *nombre de la columna* from *nombre de la tabla* group by *nombre de la columna*; (agrupa los elementos en base
+</ul>
+</article>
+<br>
+<article>
+<h2> Actualizar, Eliminar, Renombrar</h2>
+<br>
+<li> UPDATE *nombre de la tabla* SET nombre= 'Daniel' where id= *numero del id*;(Actualiza el dato en base al Id seleccionado)</li>
+<br>
+<li> DELATE from *nombre de la tabla* where id= *numero del id* (Se indica que se quiere eliminar un registro de la tabla indicada, Esto siempre requiere que se indique el id del valor que se quiere eliminar)</li>
+<br>
+<li> rename table *nombre de la tabla* to *nombre por el que se va a reemplazar*; (Cambia el nombre de la tabla) </li>
+<br>
+<br>
+</article>
+
+</p>
+</div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Ramder. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/+573228012996" class="social-icon"><img src="imagen/whatsapp.png" alt="logo"/ height="25 px"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/dead_memories_19/?utm_source=qr&igsh=MTF6ZTU3aTNuaDQ1Zg%3D%3D" class="social-icon"><img src="imagen/instagram.png" alt="logo"/ height="25 px"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
